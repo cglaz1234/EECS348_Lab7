@@ -13,12 +13,12 @@
 echo "<table border=\"i\"><tbody>";
 echo "<tr><td></td>";
 
-for ($y = 1; $y < $_POST["num"]; $y++) {
+for ($y = 1; $y <= $_POST["num"]; $y++) {
 	echo "<td>" . $y . "</td>";
 }
 echo "</tr>";
 
-  for ($y = 1; $y < $_POST["num"]; $y++) {
+  for ($y = 1; $y <= $_POST["num"]; $y++) {
 	  echo "<tr>";
 	  echo "<td>" . $y . "</td>";
 	  for ($x = 1; $x < $_POST["num"]; $x++) {
