@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
+<script>
+function verify(){
+	let firstInput = document.getElementById("first");
+	let secondInput = document.getElementById("second");
+
+	if (firstInput.value.length < 8) {
+		alert("Your password must be at least 8 characters");
+		return;
+	}
+	
+	if (firstInput.value != secondInput.value) {
+                alert("Your passwords must match");
+		return;
+        }
+
+	alert("Everything looks good");
+}
+</script>
+<body>
+
+<div class="">
+ <h1>EECS 348 Lab 7 Practice 3</h1>
+ <input type="text" id="first" placeholder="password"></input>
+ <input type="text" id="second" placeholder="validate password"></input>
+ <button onclick="verify()">Validate Passwords</button>
+</div>
+
+</body>
+</html> 
