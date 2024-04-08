@@ -1,24 +1,23 @@
+<html>
+<body>
+
 <?php
-if(array_key_exists('submit',$_POST)){
-        multiply();
+$sz = $_POST["size"]; 
+echo "<table>";
+for ($i=1; $i <= $sz; $i++) { 
+    echo "<tr> \n";
+    
+    for ($j=1; $j <= $sz; $j++) { 
+        $n = $i * $j;
+        
+        echo "<td>$n</td> \n";
+    }
+    
+    echo "</tr>";
 }
-function multiply() {
-	$result = [[]];
-	print "<h1> Multiplication Table </h1>";
-	echo "<span style='font-size:32px;'>"."x"."&nbsp&nbsp&nbsp";
-	for($i = 1; $i <= $_POST['size']; $i++)
-	{
-		echo "<span style='font-size:32px;'>".$i."&nbsp&nbsp&nbsp";
-		for($x = 1; $x <= $_POST['size']; $x++){ 
-			$result[$i-1][$x-1] = $i * $x;}
-	}
-	echo "<br>";
-	for ($n = 1; $n <= $_POST['size']; $n++){
-		echo "</br><span style='font-size:32px;'>".$n."&nbsp&nbsp&nbsp";
-		for ($m=1;$m <= $_POST['size']; $m++){
-			echo "<span style='font-size: 32px;'>".$result[$n-1][$m-1]."&nbsp&nbsp&nbsp";
-		}
-		echo "<br>";
-	}
-}
+
+echo "</table>";
+
 ?>
+</body>
+</html>
