@@ -1,38 +1,67 @@
-<html>
-
-<head>
-    <h1>EECS 348 Lab Seven Practice Two</h1>
-<script type="text/javascript" src="paragraph_style.js"></script>
-
-</head>
-
-
+ <!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
 <style>
-    #paragraph {
-        border-style: solid;
-        border-width: 5px;
-	border-color: "black";
-	background-color white;
-    }
 </style>
+<script>
+	function onInput() {
+		let paragraph = document.getElementById("paragraph1");
+		
+		let borderRed = document.getElementById("redInput").value;
+		let borderGreen = document.getElementById("greenInput").value;
+		let borderBlue = document.getElementById("blueInput").value;
+		
+		paragraph.style.borderColor = `rgb(${borderRed}, ${borderGreen}, ${borderBlue})`;
 
+		let backgroundRed = document.getElementById("redBgInput").value;
+                let backgroundGreen = document.getElementById("greenBgInput").value;
+                let backgroundBlue = document.getElementById("blueBgInput").value;
+
+                paragraph.style.backgroundColor = `rgb(${backgroundRed}, ${backgroundGreen}, ${backgroundBlue})`;
+
+		let borderWidth = document.getElementById("borderWidthInput").value;
+
+                paragraph.style.borderWidth = `${borderWidth}px`;
+	}
+</script>
 <body>
-    <div id="paragraph">
 
-        Change the border and background colors for this sentence by entering RGB values in the boxes below.  You can also change the border width!
+<div>
+ <p id="paragraph1" style="border-style:solid; border-width:1px">Change the border and background colors for this sentence by entering RGB values in the boxes below. You can also change the border width!</p>
+ <div style="display:flex;flex:row">
+	 Border Red (0-255)
+	 <input type="number" value="0" id="redInput" oninput="onInput()"></input>
+ </div>
+ <div style="display:flex;flex:row">
+         Border Green (0-255)
+         <input type="number" value="0" id="greenInput" oninput="onInput()"></input>
+ </div>
+ <div style="display:flex;flex:row">
+         Border Blue (0-255)
+         <input type="number" value="0" id="blueInput" oninput="onInput()"></input>
+ </div>
+<div style="display:flex;flex:row">
+         Background Red (0-255)
+         <input type="number" value="0" id="redBgInput" oninput="onInput()"></input>
+ </div>
+<div style="display:flex;flex:row">
+         Background Green (0-255)
+         <input type="number" value="0" id="greenBgInput" oninput="onInput()"></input>
+ </div>
+<div style="display:flex;flex:row">
+         Background Blue (0-255)
+         <input type="number" value="0" id="blueBgInput" oninput="onInput()"></input>
+ </div>
+ <div style="display:flex;flex:row">
+         Border Width
+         <input type="number" value="0" id="borderWidthInput" oninput="onInput()"></input>
+ </div>
 
-    </div>
 
-    <script type="text/javascript" src="functions.js"></script>
-    Border R(0-255): <input type="text" id="border_R" value=""> <br>
-    Border G(0-255): <input type="text" id="border_G" value=""> <br>
-    Border B(0-255): <input type="text" id="border_B" value=""> <br>
-    Border Width: <input type="text" id="border_width" value=""> <br>
-    Background R(0-255): <input type="text" id="bg_R" value=""> <br>
-    Background G(0-255): <input type="text" id="bg_G" value=""> <br>
-    Background B(0-255): <input type="text" id="bg_B" value=""> <br>
-    <button onclick="alert_paragraph_color()">Change the color!</button> <br>
+</div>
 
 </body>
-
-</html>
+</html> 
